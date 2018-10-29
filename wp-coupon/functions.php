@@ -243,6 +243,7 @@ function wpcoupon_theme_scripts() {
 
 	// Stylesheet
     wp_enqueue_style( 'wpcoupon_style', get_template_directory_uri().'/style.css', false, $version );
+	wp_enqueue_style( 'wpcoupon_style1', get_template_directory_uri().'/style-new.css', false, $version );
 	wp_enqueue_style( 'wpcoupon_semantic', get_template_directory_uri() .'/assets/css/semantic.min.css', array(), '4.2.0' );
 
 	if ( is_rtl() ){
