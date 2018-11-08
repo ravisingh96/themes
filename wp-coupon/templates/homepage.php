@@ -110,7 +110,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     );
     $stores = get_terms($tax_args);
     ?>
-     <h3>Top Stores</h3>
+    <h3>Top Stores</h3>
     <div class="widget-content shadow-box">
         <div class="ui six column grid">
             <?php
@@ -124,7 +124,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                             <span><?php echo wpcoupon_store()->name; ?></span>
                         </a>
                     </div>
-                   
+
                 </div>
             <?php } ?>
         </div>
@@ -177,7 +177,97 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     ?>
 
 
+    <?php
+    $paged = wpcoupon_get_paged();
+    $args = array(
+        'tax_query' => array(
+            'relation' => 'AND',
+            array(
+                'taxonomy' => 'coupon_category',
+                'field' => 'term_id',
+                'terms' => array(55),
+                'operator' => 'IN',
+            ),
+        ),
+            //'meta_value' => '',
+            //'orderby' => 'meta_value_num',
+    );
 
+    $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
+    $current_link = $_SERVER['REQUEST_URI'];
+    if ($coupons) {
+        ?>    <div class="owl-carousel2"> <?php
+        foreach ($coupons as $post) {
+            wpcoupon_setup_coupon($post, $current_link);
+            $has_thumb = wpcoupon_maybe_show_coupon_thumb();
+            ?>
+                <div class="column">
+
+                    <div class="ui segment title">
+                         <img src="https://www.barakatalan.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-15-at-10.59.26-AM-1.png">
+                           
+                        <?php /* if ($has_thumb) { ?>
+                            <div class="image"> <?php  echo wpcoupon_coupon()->get_thumb('large'); ?></div>
+                        <?php } */ ?>
+                        <?php
+                        echo esc_html(get_the_title());
+                        ?>
+
+                        <a href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                            GET THIS DEAL
+                        </a>
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+        </div>
+
+        <?php
+    }
+    ?>
+
+
+
+
+
+    <script>
+        jQuery.noConflict();
+        jQuery(".owl-carousel2").owlCarousel({
+            items: 5,
+            dots: true,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                480: {
+                    items: 2,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                750: {
+                    items: 3,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                1000: {
+                    items: 4,
+                    dots: true,
+                    nav: false,
+                    mouseDrag: true,
+                    touchDrag: true
+                }
+            }
+        });
+
+    </script>
 </div> <!-- /#content-wrap -->
 
 
