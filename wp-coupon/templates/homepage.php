@@ -91,6 +91,49 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         });
 
     </script>
+    <?php
+    $tax_args = array(
+        'orderby' => 'count',
+        'order' => 'DESC',
+        'hide_empty' => false,
+        'include' => '',
+        'exclude' => '',
+        'exclude_tree' => array(),
+        'number' => 18,
+        'hierarchical' => false,
+        'pad_counts' => false,
+        'child_of' => 0,
+        'childless' => false,
+        'cache_domain' => 'core',
+        'taxonomy' => 'coupon_store',
+        'update_term_meta_cache' => true,
+    );
+    $stores = get_terms($tax_args);
+    ?>
+     <h3>Top Stores</h3>
+    <div class="widget-content shadow-box">
+        <div class="ui six column grid">
+            <?php
+            foreach ($stores as $store) {
+                wpcoupon_setup_store($store);
+                ?>
+                <div class="column">
+                    <div class="store-thumb">
+                        <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
+                            <?php echo wpcoupon_store()->get_thumbnail() ?>
+                            <span><?php echo wpcoupon_store()->name; ?></span>
+                        </a>
+                    </div>
+                   
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+
+
+
+
+
 
     <?php
     $get_args = array();
@@ -102,9 +145,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
     if ($posts) {
         ?>
-       <h3>Today's Best Offer</h3>
+        <h3>Today's Best Offer</h3>
         <div class="ui four column grid">
-           
+
             <?php
             foreach ($posts as $post) {
                 wpcoupon_setup_coupon($post, $current_link);
