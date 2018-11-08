@@ -94,7 +94,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
     <?php
     $get_args = array();
-    $number = 8;
+    $number = 20;
 
     $get_args['posts_per_page'] = $number;
     $posts = wpcoupon_get_coupons($get_args, $paged, $_max_page);
@@ -102,11 +102,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
     if ($posts) {
         ?>
-        <div class="store-listings st-list-coupons">
-
-
-        </div>
+       <h3>Today's Best Offer</h3>
         <div class="ui four column grid">
+           
             <?php
             foreach ($posts as $post) {
                 wpcoupon_setup_coupon($post, $current_link);
