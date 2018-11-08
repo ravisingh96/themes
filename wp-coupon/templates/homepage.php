@@ -185,7 +185,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             array(
                 'taxonomy' => 'coupon_category',
                 'field' => 'term_id',
-                'terms' => array(55),
+                'terms' => array(41),
                 'operator' => 'IN',
             ),
         ),
