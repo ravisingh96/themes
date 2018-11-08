@@ -6,7 +6,7 @@
  * @since 1.0.
  */
 get_header();
-
+the_post();
 /**
  * Hooks wpcoupon_after_header
  *
@@ -30,22 +30,28 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         <br>
     </center>
     <div class="owl-carousel">
-<?php
-while ($query->have_posts()) {
-    $query->the_post();
-    $post_id = get_the_ID();
-    $meta = get_post_meta($post_id);
-    $logo = wp_get_attachment_url($meta['logo'][0]);
-    $link = $meta['link'][0];
-    ?>
+        <?php
+        $query = new WP_Query(array(
+            'post_type' => 'home_slider',
+            'post_status' => array('publish')
+        ));
+
+
+        while ($query->have_posts()) {
+            $query->the_post();
+            $post_id = get_the_ID();
+            $meta = get_post_meta($post_id);
+            $logo = wp_get_attachment_url($meta['logo'][0]);
+            $link = $meta['link'][0];
+            ?>
 
             <a href="<?php echo $link; ?>">
                 <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
             </a>
 
-    <?php
-}
-?>
+            <?php
+        }
+        ?>
     </div>
     <script>
         jQuery.noConflict();
