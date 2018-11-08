@@ -7,6 +7,7 @@
  */
 get_header();
 the_post();
+global $wp_query, $post, $paged, $wp_rewrite;
 /**
  * Hooks wpcoupon_after_header
  *
@@ -90,6 +91,51 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         });
 
     </script>
+
+    <?php
+    $get_args = array();
+    $number = 8;
+
+    $get_args['posts_per_page'] = $number;
+    $posts = wpcoupon_get_coupons($get_args, $paged, $_max_page);
+    $current_link = get_permalink();
+
+    if ($posts) {
+        ?>
+        <div class="store-listings st-list-coupons">
+
+
+        </div>
+        <div class="ui four column grid">
+            <?php
+            foreach ($posts as $post) {
+                wpcoupon_setup_coupon($post, $current_link);
+                $has_thumb = wpcoupon_maybe_show_coupon_thumb();
+                ?>
+                <div class="column">
+
+                    <div class="ui segment title">
+                        <?php if ($has_thumb) { ?>
+                            <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
+                        <?php } ?>
+                        <?php
+                        echo esc_html(get_the_title());
+                        ?>
+
+                        <a href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                            GET THIS DEAL
+                        </a>
+                    </div>
+                </div>
+            <?php }
+            ?>
+
+
+        </div>
+    <?php }
+    ?>
+
+
 
 </div> <!-- /#content-wrap -->
 
