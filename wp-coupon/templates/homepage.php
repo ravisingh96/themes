@@ -5,8 +5,6 @@
  * @package WP-Coupon
  * @since 1.0.
  */
-
-
 get_header();
 
 /**
@@ -15,16 +13,78 @@ get_header();
  * @see wpcoupon_page_header();
  *
  */
-do_action( 'wpcoupon_after_header' );
+do_action('wpcoupon_after_header');
 $layout = wpcoupon_get_site_layout();
-if ( ! is_active_sidebar( 'frontpage-sidebar' ) ) {
+if (!is_active_sidebar('frontpage-sidebar')) {
     $layout = 'no-sidebar';
 }
-
 ?>
-<div id="content-wrap" class="frontpage-container container <?php echo esc_attr( $layout ); ?>">
+<div id="content-wrap" class="frontpage-container container <?php echo esc_attr($layout); ?>">
 
-   hello
+    <!-- Slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css' type='text/css' media='all' />
+    <center>
+        <h1 class="frontpage-heading">Find Latest Coupons, Deals &amp; Offers For Today</h1>
+        <h4 class="frontpage-subheading">Save More Using Coupon Codes For Top Stores</h4>
+        <br>
+    </center>
+    <div class="owl-carousel">
+<?php
+while ($query->have_posts()) {
+    $query->the_post();
+    $post_id = get_the_ID();
+    $meta = get_post_meta($post_id);
+    $logo = wp_get_attachment_url($meta['logo'][0]);
+    $link = $meta['link'][0];
+    ?>
+
+            <a href="<?php echo $link; ?>">
+                <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
+            </a>
+
+    <?php
+}
+?>
+    </div>
+    <script>
+        jQuery.noConflict();
+        jQuery(".owl-carousel").owlCarousel({
+            items: 3,
+            dots: true,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                480: {
+                    items: 2,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                750: {
+                    items: 3,
+                    dots: true,
+                    mouseDrag: true,
+                    touchDrag: true
+                },
+                1000: {
+                    items: 3,
+                    dots: true,
+                    nav: false,
+                    mouseDrag: true,
+                    touchDrag: true
+                }
+            }
+        });
+
+    </script>
+
 </div> <!-- /#content-wrap -->
 
 
