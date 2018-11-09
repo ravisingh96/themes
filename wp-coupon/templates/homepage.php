@@ -193,24 +193,23 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         }
         ?>
     </div>
-    <div class="ui accordion">
+    <div class="home-accordian ui accordion">
         <div class="active title">
-            <i class="dropdown icon"></i>
-            How to use coupon?
+                   How to use coupon? <i class="dropdown icon"></i>
         </div>
         <div class="active content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
         </div>
         <div class="title">
-            <i class="dropdown icon"></i>
-            Something about barakatalan - branding text for us
+           
+            Something about barakatalan - branding text for us  <i class="dropdown icon"></i>
         </div>
         <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
         </div>
         <div class="title">
-            <i class="dropdown icon"></i>
-            To place promotional banner for special events like Saudi National day.
+          
+            To place promotional banner for special events like Saudi National day.  <i class="dropdown icon"></i>
         </div>
         <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
