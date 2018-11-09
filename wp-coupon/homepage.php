@@ -28,7 +28,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         <h4 class="frontpage-subheading">Save More Using Coupon Codes For Top Stores</h4>
         <br>
     </center>
-    <div class="owl-carousel owl-theme baner-carousel">
+    <div class="owl-carousel baner-carousel">
         <?php
         $query = new WP_Query(array(
             'post_type' => 'home_slider',
@@ -43,13 +43,14 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             $logo = wp_get_attachment_url($meta['logo'][0]);
             $link = $meta['link'][0];
             ?>
-		<div class="item">
+
             <a href="<?php echo $link; ?>">
                 <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
             </a>
-		</div>
-            <?php } ?>
 
+            <?php
+        }
+        ?>
     </div>
 
     <?php
@@ -73,8 +74,8 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     ?>
 <div class="top-store">	
     <h2 class="widget-title">Top Stores</h2>
-    <div class="widget-content ">
-        <div class="ui six column grid popular-stores stores-thumbs">
+    <div class="widget-content shadow-box">
+        <div class="ui six column grid">
             <?php
             foreach ($stores as $store) {
                 wpcoupon_setup_store($store);
@@ -82,11 +83,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 <div class="column">
                     <div class="store-thumb">
                         <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
-                            <?php echo wpcoupon_store()->get_thumbnail() ?></a>
-						<div class="store-name">	
-						  <a href="<?php echo wpcoupon_store()->get_url(); ?>"><?php echo wpcoupon_store()->name; ?></a>
-						  </div>
-                        
+                            <?php echo wpcoupon_store()->get_thumbnail() ?>
+                            <span><?php echo wpcoupon_store()->name; ?></span>
+                        </a>
                     </div>
 
                 </div>
@@ -110,9 +109,8 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
     if ($posts) {
         ?>
-		<div class="best-offer">
-       <h2 class="widget-title">Today's Best Offer</h2>
-        <div class="ui four column grid best-offer-column">
+        <h3>Today's Best Offer</h3>
+        <div class="ui four column grid">
 
             <?php
             foreach ($posts as $post) {
@@ -125,9 +123,11 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                         <?php if ($has_thumb) { ?>
                             <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                         <?php } ?>
-                       <h5><?php echo esc_html(get_the_title());?></h5>
+                        <?php
+                        echo esc_html(get_the_title());
+                        ?>
 
-                        <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                        <a href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
                             GET THIS DEAL
                         </a>
                     </div>
@@ -135,13 +135,12 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             <?php }
             ?>
 
-		</div>
+
         </div>
     <?php }
     ?>
 
-<div class="best-offer-column bank-offer">
-  <h2 class="widget-title">Bank Offer's</h2>
+
     <?php
     $paged = wpcoupon_get_paged();
     $args = array(
@@ -161,24 +160,27 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
     $current_link = $_SERVER['REQUEST_URI'];
     if ($coupons) {
-        ?>    <div class="owl-carousel owl-theme bank-carousel"> <?php
+        ?>    <div class="owl-carousel2"> <?php
         foreach ($coupons as $post) {
             wpcoupon_setup_coupon($post, $current_link);
             $has_thumb = wpcoupon_maybe_show_coupon_thumb();
             ?>
-                <div class="item">
-                    <div class="ui segment">
-                    
+                <div class="column">
+
+                    <div class="ui segment title">
                          <!-- <img src="https://www.barakatalan.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-15-at-10.59.26-AM-1.png">-->
                            
-                        
+                        <?php  if ($has_thumb) { ?>
                             <div class="image"> <?php  echo wpcoupon_coupon()->get_thumb('large'); ?></div>
-                     <h5> <?php  echo esc_html(get_the_title()); ?></h5>
+                        <?php } ?>
+                        <?php
+                        echo esc_html(get_the_title());
+                        ?>
 
-                        <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                        <a href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
                             GET THIS DEAL
                         </a>
-                   </div>
+                    </div>
                 </div>
                 <?php
             }
@@ -188,20 +190,19 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         <?php
     }
     ?>
-</div>
+
 
 </div> <!-- /#content-wrap -->
 
 
 <?php get_footer(); ?>
     <!-- Slider -->
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
-	<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.carousel.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.theme.default.min.css' type='text/css' media='all' />
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/owl.carousel.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css' type='text/css' media='all' />
     <script type="text/javascript">
 	jQuery(document).ready(function() {
         jQuery.noConflict();
-        jQuery(".baner-carousel").owlCarousel({
+        jQuery(".owl-carousel").owlCarousel({
             items: 3,
             dots: true,
             loop: true,
@@ -234,9 +235,8 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 }
             }
         });
-		jQuery.noConflict();
-        jQuery(".bank-carousel").owlCarousel({
-            items: 4,
+        jQuery(".owl-carousel2").owlCarousel({
+            items: 5,
             dots: true,
             loop: true,
             margin: 10,
@@ -262,7 +262,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 1000: {
                     items: 4,
                     dots: true,
-                    nav: true,
+                    nav: false,
                     mouseDrag: true,
                     touchDrag: true
                 }
