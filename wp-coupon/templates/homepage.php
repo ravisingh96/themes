@@ -126,10 +126,38 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                 <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <?php } ?>
                             <h5><?php echo esc_html(get_the_title()); ?></h5>
+                            <?php
+                            switch (wpcoupon_coupon()->get_type()) {
 
-                            <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                                case 'sale':
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                    <?php
+                                    break;
+                                case 'print':
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-print coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Print Coupon', 'wp-coupon'); ?> <i class="print icon"></i></a>
+                                    <?php
+                                    break;
+                                default:
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>"
+                                       data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
+                                       href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"
+                                       class="coupon-button coupon-code"
+                                       data-tooltip="<?php echo esc_attr_e('Click to copy & open site', 'wp-coupon'); ?>"
+                                       data-position="top center"
+                                       data-inverted=""
+                                       data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
+                                       data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>">
+                                        <span class="code-text" rel="nofollow"><?php echo esc_html(wpcoupon_coupon()->get_code(8)); ?></span>
+                                        <span class="get-code"><?php esc_html_e('Get Code', 'wp-coupon'); ?></span>
+                                    </a>
+                                <?php }
+                            ?>
+<!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
                                 GET THIS DEAL
-                            </a>
+                            </a>-->
                         </div>
                     </div>
                 <?php }
@@ -180,7 +208,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                 data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
                                 data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>"
                                 data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
-                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );   ?></a>
+                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );    ?></a>
 
                         </div>
                     </div>
@@ -195,20 +223,20 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     </div>
     <div class="home-accordian ui accordion">
         <div class="active title">
-                   How to use coupon? <i class="dropdown icon"></i>
+            How to use coupon? <i class="dropdown icon"></i>
         </div>
         <div class="active content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
         </div>
         <div class="title">
-           
+
             Something about barakatalan - branding text for us  <i class="dropdown icon"></i>
         </div>
         <div class="content">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
         </div>
         <div class="title">
-          
+
             To place promotional banner for special events like Saudi National day.  <i class="dropdown icon"></i>
         </div>
         <div class="content">

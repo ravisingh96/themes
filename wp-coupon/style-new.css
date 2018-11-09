@@ -1,29 +1,29 @@
 #site-header-nav{  
-  background: #579091;
+    background: #579091;
     box-shadow: none;
 }
 .site-content .frontpage-container{
-	padding-top:60px !important;
+    padding-top:60px !important;
 }
 .frontpage-after-main .widget_wpc_categories{
-	display:none;
+    display:none;
 }
 .baner-carousel{
-	margin-bottom:40px;
+    margin-bottom:40px;
 }
 .top-store h2.widget-title,
 .best-offer h2.widget-title,
 .bank-offer h2.widget-title{
-font-size: 23px;
+    font-size: 23px;
     font-weight: 300;
     letter-spacing: -0.3px;
     margin-bottom: 20px;
 }
 .popular-stores .store-thumb a{
-	line-height:0px;
+    line-height:0px;
 }
 .popular-stores .store-thumb a.ui{
-	
+
 }
 
 .popular-stores .store-thumb a {
@@ -40,10 +40,10 @@ font-size: 23px;
     vertical-align: middle;
 }
 .store-thumb{
-	text-align:center;
+    text-align:center;
 }
 .store-thumb a.image{
-	
+
 }
 .store-thumb a.image img{
     height: auto;
@@ -51,17 +51,17 @@ font-size: 23px;
     float: none;	
 }
 .store-thumb a.image {
-height: 120px;
+    height: 120px;
     padding-top: 11px;
 }
 .popular-stores{
-	background:none;
+    background:none;
 }
 .popular-stores .column .store-thumb{
-	background:#fff;
+    background:#fff;
 }
 .top-store{
-	margin-bottom:40px;
+    margin-bottom:40px;
 }
 .frontpage-subheading {
     color: #777;
@@ -74,20 +74,20 @@ height: 120px;
     margin-bottom: 14px;
 }
 .best-offer-column .ui.segment{
-	text-align: center;
+    text-align: center;
 }
 .best-offer-column .ui.segment .image{
-	margin-bottom: 20px;
+    margin-bottom: 20px;
     min-height: 100px;
 }
 .best-offer-column .ui.segment .image img{
-height: 102px;
+    height: 102px;
     width: auto;
     float: none;
     display: inline-block;
 }
 .best-offer-column .ui.segment h5{
-	min-height:57px;
+    min-height:57px;
 }
 .best-offer-column .ui.segment a.coupon-button{
     line-height: 1;
@@ -104,78 +104,78 @@ height: 102px;
     margin-bottom: 2px;
     min-width: 195px;
     text-align: center;	
-background-color: #579091;
-border:1px solid #579091;
+    background-color: #579091;
+    border:1px solid #579091;
 }
 .best-offer-column .ui.segment a.coupon-button:hover{
-	background-color:#fff;
-	color: #579091;
+    background-color:#fff;
+    color: #579091;
 }
 .best-offer{
-	margin-bottom:40px;
+    margin-bottom:40px;
 }
 .owl-carousel.owl-theme .owl-dots .owl-dot{
-	outline:none !important;
+    outline:none !important;
 }
 .bank-offer .owl-carousel .owl-nav button.owl-prev,
- .bank-offer .owl-carousel .owl-nav button.owl-next{
+.bank-offer .owl-carousel .owl-nav button.owl-next{
     position: absolute;
     top: 35%;
     margin: 0px;
     padding: 0px !important;
     /* height: 0px !important; */
-	 color: #579091;
-	 outline:none;
- }
- .bank-offer .owl-carousel .owl-nav button.owl-prev span,
-  .bank-offer .owl-carousel .owl-nav button.owl-next span{
-     font-size: 100px;
+    color: #579091;
+    outline:none;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev span,
+.bank-offer .owl-carousel .owl-nav button.owl-next span{
+    font-size: 100px;
     line-height: 0px;
     padding: 0px;
     margin: 0px;
     height: 49px;
     display: block;
- }
- .bank-offer .owl-carousel .owl-nav button.owl-prev{
-	 left:-45px;
- }
- .bank-offer .owl-carousel .owl-nav button.owl-next{
-	 right:-45px;
-	 left:auto;
- }
-  .bank-offer .owl-theme .owl-nav [class*=owl-]:hover{
-	 background:none;
- }
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev{
+    left:-45px;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-next{
+    right:-45px;
+    left:auto;
+}
+.bank-offer .owl-theme .owl-nav [class*=owl-]:hover{
+    background:none;
+}
 
 
- .bank-offer .owl-theme .owl-dots .owl-dot span,
- .baner-carousel.owl-theme .owl-dots .owl-dot span{
-	  background:none;
-	  border:1px solid #579091;
-	  width: 16px;
+.bank-offer .owl-theme .owl-dots .owl-dot span,
+.baner-carousel.owl-theme .owl-dots .owl-dot span{
+    background:none;
+    border:1px solid #579091;
+    width: 16px;
     height: 16px;
- }
-  .bank-offer .owl-theme .owl-dots .owl-dot.active span,
- .bank-offer .owl-theme .owl-dots .owl-dot:hover span,
- .baner-carousel.owl-theme .owl-dots .owl-dot.active span,
- .baner-carousel.owl-theme .owl-dots .owl-dot:hover span{
-	 background:#579091;
- }
- .home-accordian .title{
-  
+}
+.bank-offer .owl-theme .owl-dots .owl-dot.active span,
+.bank-offer .owl-theme .owl-dots .owl-dot:hover span,
+.baner-carousel.owl-theme .owl-dots .owl-dot.active span,
+.baner-carousel.owl-theme .owl-dots .owl-dot:hover span{
+    background:#579091;
+}
+.home-accordian .title{
+
     padding: 0px;
     line-height: 45px;
     padding: 0px !important;
-  
+
     font-size: 19px !important;
     margin-bottom: 20px;
-		border:1px solid #579091;
-	
+    border:1px solid #579091;
 
-   padding-left:15px !important;
-  background: #579091;
+
+    padding-left:15px !important;
+    background: #579091;
     color: #fff !important;
- }
+}
 .home-accordian .title.active,
 .home-accordian .title:hover{
     background: #579091;
@@ -187,48 +187,81 @@ border:1px solid #579091;
     float: right !important;
 }
 .home-accordian{
-	padding-top:40px;
+    padding-top:40px;
 }
 .mc4wp-form input[type="submit"]{
-	    background: #00979d !important;
+    background: #00979d !important;
 }
 .mc4wp-form label{
-font-weight: 600;
+    font-weight: 600;
     margin-bottom: 10px;
     display: block;
 }
 .site-footer .footer_copy{
-	padding-top:0px;
-	border:none;
-	margin-top:20px;
+    padding-top:0px;
+    border:none;
+    margin-top:20px;
 }
 .coupon-store-main .coupon-filter{
-	display:none;
+    display:none;
 }
+
+.coupon-code {
+    color: #444 !important;
+    background: linear-gradient(315deg, rgba(0, 0, 0, 0.06) 10%, transparent 15%, transparent 35%, rgba(0, 0, 0, 0.06) 40%, rgba(0, 0, 0, 0.06) 60%, transparent 65%, transparent 85%, rgba(0, 0, 0, 0.06) 90%) repeat scroll 0 0/6px 6px transparent !important;
+    text-align: right !important;
+    padding: 12px 12px !important;
+    font-size: 20px !important;
+    position: relative;
+}
+.get-code {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: #579091;
+    color: #FFF;
+    font-size: 16px;
+    padding: 17px 15px 14px 14px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: all 0.5s ease;
+}
+.get-code:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 47px solid transparent;
+    border-left: 44px solid #579091;
+    position: absolute;
+    right: -44px;
+    top: 0;
+}
+
 @media screen and (min-width: 1100px){
 
 }
 @media screen and (min-width: 790px){
-#header-search input[type="text"] {
-    width: 500px;
-    height: 50px;
-}
+    #header-search input[type="text"] {
+        width: 500px;
+        height: 50px;
+    }
 }
 
 @media screen and (min-width: 500px){
 
 }
 @media screen and (max-width: 767px){
-.best-offer .ui.grid>[class*="four column"].doubling:not(.stackable).row.row>.column,
-.best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.column:not(.row), 
- .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.row>.column{
-	 width:100% !important;
-padding-bottom:0px;
-	 }
-.st-menu.st-menu-mobile{
-	background:#579091;
-}
-#nav-toggle i,.st-menu.st-menu-mobile i{
-	color:#fff;
-}
+    .best-offer .ui.grid>[class*="four column"].doubling:not(.stackable).row.row>.column,
+    .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.column:not(.row), 
+    .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.row>.column{
+        width:100% !important;
+        padding-bottom:0px;
+    }
+    .st-menu.st-menu-mobile{
+        background:#579091;
+    }
+    #nav-toggle i,.st-menu.st-menu-mobile i{
+        color:#fff;
+    }
 }
