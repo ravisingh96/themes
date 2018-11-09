@@ -66,9 +66,9 @@
                         }
                         echo '</span>';
 
-                        if ( wpcoupon_get_option('enable_footer_author') ) {
-                            echo '<span>'.sprintf( esc_html__( 'WordPress Coupon Theme by %s', 'wp-coupon' ), '<a href="https://www.famethemes.com">FameThemes</a>' ).'</span>' ;
-                        }
+//                        if ( wpcoupon_get_option('enable_footer_author') ) {
+//                            echo '<span>'.sprintf( esc_html__( 'WordPress Coupon Theme by %s', 'wp-coupon' ), '<a href="https://www.famethemes.com">FameThemes</a>' ).'</span>' ;
+//                        }
                         ?>
                     </p>
                     <nav id="footer-nav" class="site-footer-nav">
