@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Home Page 2
  *
  * @package WP-Coupon
  * @since 1.0.
@@ -72,27 +72,27 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     );
     $stores = get_terms($tax_args);
     ?>
-<div class="top-store">	
-    <h2 class="widget-title">Top Stores</h2>
-    <div class="widget-content shadow-box">
-        <div class="ui six column grid">
-            <?php
-            foreach ($stores as $store) {
-                wpcoupon_setup_store($store);
-                ?>
-                <div class="column">
-                    <div class="store-thumb">
-                        <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
-                            <?php echo wpcoupon_store()->get_thumbnail() ?>
-                            <span><?php echo wpcoupon_store()->name; ?></span>
-                        </a>
-                    </div>
+    <div class="top-store">	
+        <h2 class="widget-title">Top Stores 2</h2>
+        <div class="widget-content shadow-box">
+            <div class="ui six column doubling grid">
+                <?php
+                foreach ($stores as $store) {
+                    wpcoupon_setup_store($store);
+                    ?>
+                    <div class="column">
+                        <div class="store-thumb">
+                            <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
+                                <?php echo wpcoupon_store()->get_thumbnail() ?>
+                                <span><?php echo wpcoupon_store()->name; ?></span>
+                            </a>
+                        </div>
 
-                </div>
-            <?php } ?>
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
-	</div>
 
 
 
@@ -169,9 +169,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                     <div class="ui segment title">
                          <!-- <img src="https://www.barakatalan.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-15-at-10.59.26-AM-1.png">-->
-                           
-                        <?php  if ($has_thumb) { ?>
-                            <div class="image"> <?php  echo wpcoupon_coupon()->get_thumb('large'); ?></div>
+
+                        <?php if ($has_thumb) { ?>
+                            <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                         <?php } ?>
                         <?php
                         echo esc_html(get_the_title());
@@ -196,11 +196,11 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
 
 <?php get_footer(); ?>
-    <!-- Slider -->
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/owl.carousel.js"></script>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css' type='text/css' media='all' />
-    <script type="text/javascript">
-	jQuery(document).ready(function() {
+<!-- Slider -->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/owl.carousel.js"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css' type='text/css' media='all' />
+<script type="text/javascript">
+    jQuery(document).ready(function () {
         jQuery.noConflict();
         jQuery(".owl-carousel").owlCarousel({
             items: 3,
@@ -268,5 +268,5 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 }
             }
         });
-		 });
-    </script>
+    });
+</script>

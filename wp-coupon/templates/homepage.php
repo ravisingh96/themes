@@ -43,12 +43,12 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             $logo = wp_get_attachment_url($meta['logo'][0]);
             $link = $meta['link'][0];
             ?>
-		<div class="item">
-            <a href="<?php echo $link; ?>">
-                <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
-            </a>
-		</div>
-            <?php } ?>
+            <div class="item">
+                <a href="<?php echo $link; ?>">
+                    <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
+                </a>
+            </div>
+        <?php } ?>
 
     </div>
 
@@ -71,29 +71,29 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     );
     $stores = get_terms($tax_args);
     ?>
-<div class="top-store">	
-    <h2 class="widget-title">Top Stores</h2>
-    <div class="widget-content ">
-        <div class="ui six column grid popular-stores stores-thumbs">
-            <?php
-            foreach ($stores as $store) {
-                wpcoupon_setup_store($store);
-                ?>
-                <div class="column">
-                    <div class="store-thumb">
-                        <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
-                            <?php echo wpcoupon_store()->get_thumbnail() ?></a>
-						<div class="store-name">	
-						  <a href="<?php echo wpcoupon_store()->get_url(); ?>"><?php echo wpcoupon_store()->name; ?></a>
-						  </div>
-                        
-                    </div>
+    <div class="top-store">	
+        <h2 class="widget-title">Top Stores</h2>
+        <div class="widget-content ">
+            <div class="ui six column doubling grid popular-stores stores-thumbs">
+                <?php
+                foreach ($stores as $store) {
+                    wpcoupon_setup_store($store);
+                    ?>
+                    <div class="column">
+                        <div class="store-thumb">
+                            <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
+                                <?php echo wpcoupon_store()->get_thumbnail() ?></a>
+                            <div class="store-name">	
+                                <a href="<?php echo wpcoupon_store()->get_url(); ?>"><?php echo wpcoupon_store()->name; ?></a>
+                            </div>
 
-                </div>
-            <?php } ?>
+                        </div>
+
+                    </div>
+                <?php } ?>
+            </div>
         </div>
     </div>
-	</div>
 
 
 
@@ -110,96 +110,100 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
     if ($posts) {
         ?>
-		<div class="best-offer">
-       <h2 class="widget-title">Today's Best Offer</h2>
-        <div class="ui four column grid best-offer-column">
+        <div class="best-offer">
+            <h2 class="widget-title">Today's Best Offer</h2>
+            <div class="ui four column doubling grid best-offer-column">
 
-            <?php
-            foreach ($posts as $post) {
-                wpcoupon_setup_coupon($post, $current_link);
-                $has_thumb = wpcoupon_maybe_show_coupon_thumb();
-                ?>
-                <div class="column">
+                <?php
+                foreach ($posts as $post) {
+                    wpcoupon_setup_coupon($post, $current_link);
+                    $has_thumb = wpcoupon_maybe_show_coupon_thumb();
+                    ?>
+                    <div class="column">
 
-                    <div class="ui segment title">
-                        <?php if ($has_thumb) { ?>
-                            <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
-                        <?php } ?>
-                       <h5><?php echo esc_html(get_the_title());?></h5>
+                        <div class="ui segment title">
+                            <?php if ($has_thumb) { ?>
+                                <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
+                            <?php } ?>
+                            <h5><?php echo esc_html(get_the_title()); ?></h5>
 
-                        <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
-                            GET THIS DEAL
-                        </a>
+                            <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
+                                GET THIS DEAL
+                            </a>
+                        </div>
                     </div>
-                </div>
-            <?php }
-            ?>
+                <?php }
+                ?>
 
-		</div>
+            </div>
         </div>
     <?php }
     ?>
 
-<div class="best-offer-column bank-offer">
-  <h2 class="widget-title">Bank Offer's</h2>
-    <?php
-    $paged = wpcoupon_get_paged();
-    $args = array(
-        'tax_query' => array(
-            'relation' => 'AND',
-            array(
-                'taxonomy' => 'coupon_category',
-                'field' => 'term_id',
-                'terms' => array(41),
-                'operator' => 'IN',
-            ),
-        ),
-            //'meta_value' => '',
-            //'orderby' => 'meta_value_num',
-    );
-
-    $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
-    $current_link = $_SERVER['REQUEST_URI'];
-    if ($coupons) {
-        ?>    <div class="owl-carousel owl-theme bank-carousel"> <?php
-        foreach ($coupons as $post) {
-            wpcoupon_setup_coupon($post, $current_link);
-            $has_thumb = wpcoupon_maybe_show_coupon_thumb();
-            ?>
-                <div class="item">
-                    <div class="ui segment">
-                    
-                         <!-- <img src="https://www.barakatalan.com/wp-content/uploads/2018/05/Screen-Shot-2018-05-15-at-10.59.26-AM-1.png">-->
-                           
-                        
-                            <div class="image"> <?php  echo wpcoupon_coupon()->get_thumb('large'); ?></div>
-                     <h5> <?php  echo esc_html(get_the_title()); ?></h5>
-
-                        <a class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
-                            GET THIS DEAL
-                        </a>
-                   </div>
-                </div>
-                <?php
-            }
-            ?>
-        </div>
-
+    <div class="best-offer-column bank-offer">
+        <h2 class="widget-title">Bank Offer's</h2>
         <?php
-    }
-    ?>
-</div>
+        $paged = wpcoupon_get_paged();
+        $args = array(
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'coupon_category',
+                    'field' => 'term_id',
+                    'terms' => array(55),
+                    'operator' => 'IN',
+                ),
+            ),
+                //'meta_value' => '',41
+                //'orderby' => 'meta_value_num',
+        );
+
+        $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
+        $current_link2 = get_permalink();
+        if ($coupons) {
+            ?>    <div class="owl-carousel owl-theme bank-carousel"> <?php
+            foreach ($coupons as $post) {
+                wpcoupon_setup_coupon($post, $current_link2);
+                $has_thumb = wpcoupon_maybe_show_coupon_thumb();
+                ?>
+                    <div class="item">
+                        <div class="ui segment">
+                            <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
+                            <h5> <?php echo esc_html(get_the_title()); ?></h5>
+                            <a
+                                title="<?php echo esc_attr(get_the_title(wpcoupon_coupon()->ID)) ?>"
+                                <?php if (!wpcoupon_is_single_enable()) { ?>
+                                    rel="nofollow"
+                                <?php } ?>
+                                class="coupon-deal coupon-button"
+                                data-type="<?php echo wpcoupon_coupon()->get_type(); ?>"
+                                data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
+                                data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>"
+                                data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
+                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );  ?></a>
+
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+
+            <?php
+        }
+        ?>
+    </div>
 
 </div> <!-- /#content-wrap -->
 
 
 <?php get_footer(); ?>
-    <!-- Slider -->
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
-	<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.carousel.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.theme.default.min.css' type='text/css' media='all' />
-    <script type="text/javascript">
-	jQuery(document).ready(function() {
+<!-- Slider -->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/owl.carousel.min.js"></script>
+<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.carousel.css' type='text/css' media='all' />
+<link rel='stylesheet' href='<?php echo get_stylesheet_directory_uri(); ?>/assets/css/owl.theme.default.min.css' type='text/css' media='all' />
+<script type="text/javascript">
+    jQuery(document).ready(function () {
         jQuery.noConflict();
         jQuery(".baner-carousel").owlCarousel({
             items: 3,
@@ -234,7 +238,6 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 }
             }
         });
-		jQuery.noConflict();
         jQuery(".bank-carousel").owlCarousel({
             items: 4,
             dots: true,
@@ -268,5 +271,5 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 }
             }
         });
-		 });
-    </script>
+    });
+</script>
