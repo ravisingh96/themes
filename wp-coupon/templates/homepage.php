@@ -119,7 +119,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                     wpcoupon_setup_coupon($post, $current_link);
                     $has_thumb = wpcoupon_maybe_show_coupon_thumb();
                     ?>
-                    <div class="column">
+                    <div class="bst-column column">
 
                         <div class="ui segment title">
                             <?php if ($has_thumb) { ?>
@@ -150,7 +150,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 array(
                     'taxonomy' => 'coupon_category',
                     'field' => 'term_id',
-                    'terms' => array(55),
+                    'terms' => array(41),
                     'operator' => 'IN',
                 ),
             ),

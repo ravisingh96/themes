@@ -185,7 +185,8 @@ padding-bottom:0px;
 .st-menu.st-menu-mobile{
 	background:#579091;
 }
-#nav-toggle i,.st-menu.st-menu-mobile i{
+#nav-toggle i,
+.st-menu.st-menu-mobile i{
 	color:#fff;
 }
 }
