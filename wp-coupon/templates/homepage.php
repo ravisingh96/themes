@@ -180,7 +180,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                 data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
                                 data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>"
                                 data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
-                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );  ?></a>
+                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );   ?></a>
 
                         </div>
                     </div>
@@ -192,6 +192,29 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             <?php
         }
         ?>
+    </div>
+    <div class="ui accordion">
+        <div class="active title">
+            <i class="dropdown icon"></i>
+            How to use coupon?
+        </div>
+        <div class="active content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
+        </div>
+        <div class="title">
+            <i class="dropdown icon"></i>
+            Something about barakatalan - branding text for us
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
+        </div>
+        <div class="title">
+            <i class="dropdown icon"></i>
+            To place promotional banner for special events like Saudi National day.
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
+        </div>
     </div>
 
 </div> <!-- /#content-wrap -->
@@ -205,6 +228,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 <script type="text/javascript">
     jQuery(document).ready(function () {
         jQuery.noConflict();
+        jQuery('.ui.accordion').accordion();
         jQuery(".baner-carousel").owlCarousel({
             items: 3,
             dots: true,
