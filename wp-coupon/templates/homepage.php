@@ -198,18 +198,36 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                         <div class="ui segment">
                             <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <h5> <?php echo esc_html(get_the_title()); ?></h5>
-                            <a
-                                title="<?php echo esc_attr(get_the_title(wpcoupon_coupon()->ID)) ?>"
-                                <?php if (!wpcoupon_is_single_enable()) { ?>
-                                    rel="nofollow"
-                                <?php } ?>
-                                class="coupon-deal coupon-button"
-                                data-type="<?php echo wpcoupon_coupon()->get_type(); ?>"
-                                data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
-                                data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>"
-                                data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
-                                href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>">GET THIS DEAL<?php // echo get_the_title( wpcoupon_coupon()->ID );    ?></a>
+                              <?php
+                            switch (wpcoupon_coupon()->get_type()) {
 
+                                case 'sale':
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                    <?php
+                                    break;
+                                case 'print':
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-print coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Print Coupon', 'wp-coupon'); ?> <i class="print icon"></i></a>
+                                    <?php
+                                    break;
+                                default:
+                                    ?>
+                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>"
+                                       data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>"
+                                       href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"
+                                       class="coupon-button coupon-code"
+                                       data-tooltip="<?php echo esc_attr_e('Click to copy & open site', 'wp-coupon'); ?>"
+                                       data-position="top center"
+                                       data-inverted=""
+                                       data-code="<?php echo esc_attr(wpcoupon_coupon()->get_code()); ?>"
+                                       data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>">
+                                        <span class="code-text" rel="nofollow"><?php echo esc_html(wpcoupon_coupon()->get_code(8)); ?></span>
+                                        <span class="get-code"><?php esc_html_e('Get Code', 'wp-coupon'); ?></span>
+                                    </a>
+                                <?php }
+                            ?>
+                           
                         </div>
                     </div>
                     <?php
