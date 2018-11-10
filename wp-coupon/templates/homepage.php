@@ -277,7 +277,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         jQuery(".baner-carousel").owlCarousel({
             items: 3,
             dots: true,
-            loop: true,
+            autoPlay: true,
             margin: 20,
             responsive: {
                 0: {
