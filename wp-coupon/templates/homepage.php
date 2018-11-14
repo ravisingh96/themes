@@ -131,7 +131,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                            <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -155,9 +155,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                     </a>
                             <?php }
                             ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());  ?>">
-                        GET THIS DEAL
-                    </a>-->
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());   ?>">
+                GET THIS DEAL
+            </a>-->
                         </div>
                     </div>
                 <?php }
@@ -203,7 +203,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                            <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -248,41 +248,20 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 'key' => 'is_featured',
             ),
     )));
-    echo '<pre>';
-//    print_r($wcatTerms);
+
 
     foreach ($wcatTerms as $wcatTerm) :
-        $premium_text = get_field('premium_text', $wcatTerm);
-        $image = get_field('image', $wcatTerm);
-
-
-        print_r($premium_text);
-        print_r($image);
+        $catImage = get_field('image', $wcatTerm);
+        echo $catImage;
+        
         ?>
         <ul>
             <li>
                 <a href="<?php echo get_term_link($wcatTerm->slug, $wcatTerm->taxonomy); ?>"><?php echo $wcatTerm->name; ?></a>
-                <ul class="megaSubCat">
-                    <?php
-                    $wsubargs = array(
-                        'hierarchical' => 1,
-                        'show_option_none' => '',
-                        'hide_empty' => 0,
-                        'parent' => $wcatTerm->term_id,
-                        'taxonomy' => 'product_cat'
-                    );
-                    $wsubcats = get_categories($wsubargs);
-                    foreach ($wsubcats as $wsc):
-                        ?>
-                        <li><a href="<?php echo get_term_link($wsc->slug, $wsc->taxonomy); ?>"><?php echo $wsc->name; ?></a></li>
-                        <?php
-                    endforeach;
-                    ?>  
-                </ul>
-            </li>
         </ul>
         <?php
     endforeach;
+
     ?>
 
     <!-- Top Category Offer END   -->
