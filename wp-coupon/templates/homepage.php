@@ -131,7 +131,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                            <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -153,11 +153,11 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                         <span class="code-text" rel="nofollow"><?php echo esc_html(wpcoupon_coupon()->get_code(8)); ?></span>
                                         <span class="get-code"><?php esc_html_e('Get Code', 'wp-coupon'); ?></span>
                                     </a>
-                                <?php }
+                            <?php }
                             ?>
-<!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url()); ?>">
-                                GET THIS DEAL
-                            </a>-->
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());  ?>">
+                        GET THIS DEAL
+                    </a>-->
                         </div>
                     </div>
                 <?php }
@@ -198,12 +198,12 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                         <div class="ui segment">
                             <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <h5> <?php echo esc_html(get_the_title()); ?></h5>
-                              <?php
+                            <?php
                             switch (wpcoupon_coupon()->get_type()) {
 
                                 case 'sale':
                                     ?>
-                                    <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                            <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -225,9 +225,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                         <span class="code-text" rel="nofollow"><?php echo esc_html(wpcoupon_coupon()->get_code(8)); ?></span>
                                         <span class="get-code"><?php esc_html_e('Get Code', 'wp-coupon'); ?></span>
                                     </a>
-                                <?php }
+                            <?php }
                             ?>
-                           
+
                         </div>
                     </div>
                     <?php
@@ -239,6 +239,55 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         }
         ?>
     </div>
+
+    <!-- Top Category Offer Start   -->
+    <?php
+    $wcatTerms = get_terms('coupon_category', array('hide_empty' => 0, 'parent' => 0, 'number' => 4, 'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'is_featured',
+            ),
+    )));
+    echo '<pre>';
+//    print_r($wcatTerms);
+
+    foreach ($wcatTerms as $wcatTerm) :
+        $premium_text = get_field('premium_text', $wcatTerm);
+        $image = get_field('image', $wcatTerm);
+
+
+        print_r($premium_text);
+        print_r($image);
+        ?>
+        <ul>
+            <li>
+                <a href="<?php echo get_term_link($wcatTerm->slug, $wcatTerm->taxonomy); ?>"><?php echo $wcatTerm->name; ?></a>
+                <ul class="megaSubCat">
+                    <?php
+                    $wsubargs = array(
+                        'hierarchical' => 1,
+                        'show_option_none' => '',
+                        'hide_empty' => 0,
+                        'parent' => $wcatTerm->term_id,
+                        'taxonomy' => 'product_cat'
+                    );
+                    $wsubcats = get_categories($wsubargs);
+                    foreach ($wsubcats as $wsc):
+                        ?>
+                        <li><a href="<?php echo get_term_link($wsc->slug, $wsc->taxonomy); ?>"><?php echo $wsc->name; ?></a></li>
+                        <?php
+                    endforeach;
+                    ?>  
+                </ul>
+            </li>
+        </ul>
+        <?php
+    endforeach;
+    ?>
+
+    <!-- Top Category Offer END   -->
+
+
     <div class="home-accordian ui accordion">
         <div class="active title">
             How to use coupon? <i class="dropdown icon"></i>
