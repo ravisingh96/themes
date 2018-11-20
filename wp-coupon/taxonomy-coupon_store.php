@@ -178,6 +178,7 @@ $layout = wpcoupon_get_option('store_layout', 'left-sidebar');
                             <div class="store-listings st-list-coupons premium_coupon">
                                 <?php
                                 foreach ($wp_premium as $coupon) {
+                                    ?>  <a  style="top: 15px; left: -15px !important;" class="ui red ribbon label">Premium</a><?PHP
                                     wpcoupon_setup_coupon($coupon);
                                     $post = $coupon->post;
                                     setup_postdata($post);
@@ -193,6 +194,7 @@ $layout = wpcoupon_get_option('store_layout', 'left-sidebar');
                             <div class="store-listings st-list-coupons sponsor_coupon">
                                 <?php
                                 foreach ($wp_sponsor as $coupon) {
+                                    ?>  <a style="top: 15px; left: -15px !important;" class="ui orange ribbon label">Sponsor</a><?PHP
                                     wpcoupon_setup_coupon($coupon);
                                     $post = $coupon->post;
                                     setup_postdata($post);
