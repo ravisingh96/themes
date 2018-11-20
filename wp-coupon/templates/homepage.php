@@ -132,7 +132,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                                                                                            <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                                                                                                                                                                                        <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -156,7 +156,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                     </a>
                             <?php }
                             ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());          ?>">
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                            ?>">
         GET THIS DEAL
         </a>-->
                         </div>
@@ -204,7 +204,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                              <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                                                                                                                                                              <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -242,6 +242,11 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     </div>
 
     <!-- Top Category Offer Start   -->
+    <style>
+      
+    </style>
+
+
     <?php
     $wcatTerms = get_terms('coupon_category', array('hide_empty' => 0, 'parent' => 0, 'number' => 4, 'meta_query' => array(
             'relation' => 'AND',
@@ -249,41 +254,64 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 'key' => 'is_featured',
             ),
     )));
-
-
+    ?> 
+    <div class="top-category">
+    <h2 class="widget-title">Top category offer</h2>
+    <?php
+    echo ' <ul class="list-inline go-gc">';
     foreach ($wcatTerms as $wcatTerm) :
         $catImage = get_field('image', $wcatTerm);
-        echo $catImage;
-        ?> <a href="<?php echo get_term_link($wcatTerm->slug, $wcatTerm->taxonomy); ?>"><?php echo $wcatTerm->name; ?></a>
-        <?PHP
-        $catArray = get_posts(
-                array(
-                    'posts_per_page' => 3,
-                    'post_type' => 'coupon',
-                    'tax_query' => array(
-                        array(
-                            'taxonomy' => 'coupon_category',
-                            'field' => 'term_id',
-                            'terms' => $wcatTerm->term_id,
-                        )
-                    )
-                )
-        );
-        if ($catArray) {
-            foreach ($catArray as $post) :
-                wpcoupon_setup_coupon($post, $current_link);
-                ?>
-                <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('thumbnail'); ?></div>
-                <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+        ?> 
 
-                <?php
-            endforeach;
-            wp_reset_postdata();
-        }
-        ?>
+        <li>
+            <div class="go-gcCard shown"> 
+                <div class="go-gcFront go-smooth">
+                    <img class="lazy" src="<?php echo $catImage; ?>"  alt="<?php echo $wcatTerm->name; ?>" style="display: inline;">
+                    <span class="go-smooth"><?php echo $wcatTerm->name; ?></span> 
+                </div> 
+                <div class="go-gcBack go-smooth"> <b><?php echo $wcatTerm->name; ?></b> 
 
+
+                    <?php /* <a href="<?php echo get_term_link($wcatTerm->slug, $wcatTerm->taxonomy); ?>"><?php echo $wcatTerm->name; ?></a> */ ?>
+                    <?PHP
+                    $catArray = get_posts(
+                            array(
+                                'posts_per_page' => 3,
+                                'post_type' => 'coupon',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'coupon_category',
+                                        'field' => 'term_id',
+                                        'terms' => $wcatTerm->term_id,
+                                    )
+                                )
+                            )
+                    );
+                    if ($catArray) {
+                        echo ' <ul class="list-unstyled">';
+                        foreach ($catArray as $post) :
+                            wpcoupon_setup_coupon($post, $current_link);
+                            ?>
+
+                            <li class="go-cpn-show" >
+                                <span> <?php echo wpcoupon_coupon()->get_thumb('thumbnail'); ?></span>
+                                <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                            </li>
+
+
+
+                            <?php
+                        endforeach;
+                        wp_reset_postdata();
+                        echo ' </ul>';
+                    }
+                    ?>
+                </div> 
+            </div> 
+        </li> 
         <?php
     endforeach;
+    echo '</ul></div>';
     ?>
 
     <!-- Top Category Offer END   -->
