@@ -2,7 +2,8 @@
 $has_thumb = wpcoupon_maybe_show_coupon_thumb();
 $has_expired = wpcoupon_coupon()->has_expired();
 ?>
-<div data-id="<?php echo wpcoupon_coupon()->ID; ?>"
+
+<div onclick="setFsdCookie(<?php echo wpcoupon_coupon()->ID; ?>)" data-id="<?php echo wpcoupon_coupon()->ID; ?>"
      class="coupon-item store-listing-item <?php echo $has_thumb ? 'has-thumb' : 'no-thumb'; ?> c-cat c-type-<?php echo esc_attr( wpcoupon_coupon()->get_type() ); ?> shadow-box <?php echo ( $has_expired ) ? 'coupon-expired' : 'coupon-live'; ?>">
     <?php if ( $has_thumb ) { ?>
     <div class="store-thumb-link">
