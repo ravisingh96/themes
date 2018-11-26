@@ -35,20 +35,38 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             'post_type' => 'home_slider',
             'post_status' => array('publish')
         ));
-
+        // echo '<pre>';
 
         while ($query->have_posts()) {
             $query->the_post();
             $post_id = get_the_ID();
             $meta = get_post_meta($post_id);
+            //     print_r($meta);
+
             $logo = wp_get_attachment_url($meta['logo'][0]);
             $link = $meta['link'][0];
+            $banner_image = wp_get_attachment_url($meta['banner_image'][0]);
+            $subtitle = $meta['subtitle'][0];
             ?>
-            <div class="item">
-                <a href="<?php echo $link; ?>">
-                    <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
-                </a>
-            </div>
+            <!--            <div class="item">
+                            <a href="<?php echo $link; ?>">
+                                <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
+                            </a>
+                        </div>-->
+
+            <a href="<?php echo $link; ?>" class="ui fluid card">
+                <div class="image">
+                    <img src="<?php echo $banner_image; ?>">
+                </div>
+                <div class="content">
+                    <span class="header">
+                        <img src="<?php echo $logo; ?>" class="ui middle aligned tiny image"> 
+                        <div class="right">
+                            <span class="header"><?php the_title(); ?></span>
+                            <span class="subtitle"><?php echo '<span class="sub">' . $subtitle . '</span>'; ?> </span>
+                        </div>
+                </div>
+            </a>
         <?php } ?>
 
     </div>
@@ -156,7 +174,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                     </a>
                             <?php }
                             ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                             ?>">
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                              ?>">
         GET THIS DEAL
         </a>-->
                         </div>
@@ -204,7 +222,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                                                                                                                                                                                      <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                                                                                                                                                                                      <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -367,7 +385,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                         </a>
                                 <?php }
                                 ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                             ?>">
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                              ?>">
         GET THIS DEAL
         </a>-->
                             </div>
@@ -422,7 +440,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             jQuery(".baner-carousel").owlCarousel({
                 items: 3,
                 dots: true,
-                autoPlay: true,
+                autoplay: 1000,
                 margin: 20,
                 responsive: {
                     0: {

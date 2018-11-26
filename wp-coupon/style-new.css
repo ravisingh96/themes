@@ -360,6 +360,19 @@ go-gc {
     visibility: visible;
 }
 
+.owl-item .header .right .header {
+    font-size: 1.2em;
+}
+
+.owl-item .header .right {
+    float: right;
+    display: block;
+    width: 70%;
+}
+
+.owl-item span.subtitle {
+    display: block;
+}
 
 @media screen and (min-width: 1100px){
 
