@@ -174,9 +174,6 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                     </a>
                             <?php }
                             ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                              ?>">
-        GET THIS DEAL
-        </a>-->
                         </div>
                     </div>
                 <?php }
@@ -222,7 +219,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                                 case 'sale':
                                     ?>
-                                                                                                                                                                                                                      <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
+                                                                                                                                                                                                                        <a rel="nofollow" data-type="<?php echo wpcoupon_coupon()->get_type(); ?>" data-coupon-id="<?php echo wpcoupon_coupon()->ID; ?>" data-aff-url="<?php echo esc_attr(wpcoupon_coupon()->get_go_out_url()); ?>" class="coupon-deal coupon-button" href="<?php echo esc_attr(wpcoupon_coupon()->get_href()); ?>"><?php esc_html_e('Get This Deal', 'wp-coupon'); ?> <!--<i class="shop icon"></i>--></a>
                                     <?php
                                     break;
                                 case 'print':
@@ -385,7 +382,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                         </a>
                                 <?php }
                                 ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                              ?>">
+        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                               ?>">
         GET THIS DEAL
         </a>-->
                             </div>
@@ -398,32 +395,32 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         <?php }
         ?>
 
-        <!--    <div class="home-accordian ui accordion">
-                <div class="active title">
-                    How to use coupon? <i class="dropdown icon"></i>
+        <div class="home-accordian ui accordion">
+            <div class="active title">
+                How to use coupon? <i class="dropdown icon"></i>
+            </div>
+            <div class="active content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
+            </div>
+            <div class="title">
+
+                Something about barakatalan - branding text for us  <i class="dropdown icon"></i>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
+            </div>
+            <div class="title">
+
+                To place promotional banner for special events like Saudi National day.  <i class="dropdown icon"></i>
+            </div>
+            <div class="content">
+                <div class="best-offer">
+                    <h2 class="widget-title">Looking for information on saving events around the year</h2>
+                    <img class="ui fluid image" src="http://s3-ap-south-1.amazonaws.com/barakatalan/fsd/2018/11/25105418/Screenshot-2018-11-25-at-10.51.23-AM.png"
                 </div>
-                <div class="active content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
-                </div>
-                <div class="title">
-        
-                    Something about barakatalan - branding text for us  <i class="dropdown icon"></i>
-                </div>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
-                </div>
-                <div class="title">
-        
-                    To place promotional banner for special events like Saudi National day.  <i class="dropdown icon"></i>
-                </div>
-                <div class="content">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed nunc mi. Ut aliquet justo at sagittis interdum. Maecenas et diam odio. Curabitur tristique est risus.</p>
-                </div>
-            </div>-->
-        <div class="best-offer">
-            <h2 class="widget-title">Looking for information on saving events around the year</h2>
-            <img class="ui fluid image" src="http://s3-ap-south-1.amazonaws.com/barakatalan/fsd/2018/11/25105418/Screenshot-2018-11-25-at-10.51.23-AM.png"
+            </div>
         </div>
+
 
     </div> <!-- /#content-wrap -->
 
@@ -441,6 +438,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 items: 3,
                 dots: true,
                 autoplay: 1000,
+                loop: true,
                 margin: 20,
                 responsive: {
                     0: {
