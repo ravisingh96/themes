@@ -140,7 +140,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                     ?>
                     <div class="bst-column column">
 
-                        <div class="ui segment title">
+                        <div class="ui segment title coupon-button-type">
                             <?php if ($has_thumb) { ?>
                                 <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <?php } ?>
