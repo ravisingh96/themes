@@ -215,11 +215,11 @@
     font-size: 20px !important;
     position: relative;
 }
-.get-code {
+.coupon-button-type .coupon-code .get-code {
     position: absolute;
     left: -2px;
     top: -2px;
-    background: #579091;
+    background-color: #579091 !important;
     color: #FFF;
     font-size: 16px;
     padding: 17px 15px 14px 14px;
@@ -227,13 +227,13 @@
     border-bottom-left-radius: 2px;
     transition: all 0.5s ease;
 }
-.get-code:after {
+.coupon-button-type .coupon-code .get-code:after {
     content: "";
     display: block;
     width: 0;
     height: 0;
     border-top: 47px solid transparent;
-    border-left: 44px solid #579091;
+    border-left: 44px solid #579091 !important;
     position: absolute;
     right: -44px;
     top: 0;
