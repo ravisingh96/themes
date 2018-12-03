@@ -374,7 +374,7 @@ go-gc {
     display: block;
 }
 
-.baner-carousel  .card{
+.baner-carousel .card .image img{
     min-height: 280px;
     max-height: 280px;
 }
