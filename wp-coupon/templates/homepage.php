@@ -211,7 +211,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 $has_thumb = wpcoupon_maybe_show_coupon_thumb();
                 ?>
                     <div class="item">
-                        <div class="ui segment">
+                        <div class="ui segment coupon-button-type">
                             <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <h5> <?php echo esc_html(get_the_title()); ?></h5>
                             <?php
@@ -348,7 +348,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                         ?>
                         <div class="bst-column column">
 
-                            <div class="ui segment title">
+                            <div class="ui segment title coupon-button-type">
                                 <?php if ($has_thumb) { ?>
                                     <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                                 <?php } ?>
@@ -382,9 +382,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                                         </a>
                                 <?php }
                                 ?>
-        <!--                            <a class="coupon-deal coupon-button" href="<?php // echo esc_attr(wpcoupon_coupon()->get_store_url());                               ?>">
-        GET THIS DEAL
-        </a>-->
+     
                             </div>
                         </div>
                     <?php }
