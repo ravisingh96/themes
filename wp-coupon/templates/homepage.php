@@ -393,7 +393,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         <?php }
         ?>
 
-        <div class="home-accordian ui accordion">
+        <div id=useCoupon" class="home-accordian ui accordion">
             <div class="active title">
                 How to use coupon? <i class="dropdown icon"></i>
             </div>
