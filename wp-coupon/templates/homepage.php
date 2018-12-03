@@ -35,7 +35,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             'post_type' => 'home_slider',
             'post_status' => array('publish')
         ));
-        // echo '<pre>';
+       
 
         while ($query->have_posts()) {
             $query->the_post();
@@ -48,11 +48,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             $banner_image = wp_get_attachment_url($meta['banner_image'][0]);
             $subtitle = $meta['subtitle'][0];
             ?>
-            <!--            <div class="item">
-                            <a href="<?php echo $link; ?>">
-                                <img src="<?php echo $logo; ?>" class="img-responsive" alt="...">
-                            </a>
-                        </div>-->
+      
 
             <a href="<?php echo $link; ?>" class="ui fluid card">
                 <div class="image">
@@ -198,8 +194,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                     'operator' => 'IN',
                 ),
             ),
-                //'meta_value' => '',41
-                //'orderby' => 'meta_value_num',
+                
         );
 
         $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
@@ -257,10 +252,6 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     </div>
 
     <!-- Top Category Offer Start   -->
-    <style>
-
-    </style>
-
 
     <?php
     $wcatTerms = get_terms('coupon_category', array('hide_empty' => 0, 'parent' => 0, 'number' => 4, 'meta_query' => array(
