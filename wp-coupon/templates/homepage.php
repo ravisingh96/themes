@@ -180,8 +180,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
     <?php }
     ?>
 
-    <div class="best-offer-column bank-offer">
-        <h2 class="widget-title">Bank Offer's</h2>
+
         <?php
         $paged = wpcoupon_get_paged();
         $args = array(
@@ -200,7 +199,9 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         $coupons = wpcoupon_get_coupons($args, $paged, $max_pages);
 
         if ($coupons) {
-            ?>    <div class="owl-carousel owl-theme bank-carousel"> <?php
+            ?>   
+        <div class="best-offer-column bank-offer">
+        <h2 class="widget-title">Bank Offer's</h2><div class="owl-carousel owl-theme bank-carousel"> <?php
             foreach ($coupons as $post) {
                 wpcoupon_setup_coupon($post, $current_link);
                 $has_thumb = wpcoupon_maybe_show_coupon_thumb();
@@ -241,16 +242,18 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
                         </div>
                     </div>
+            </div>
+         </div>
+
                     <?php
                 }
                 ?>
-            </div>
+            
 
             <?php
         }
         ?>
-    </div>
-
+   
     <!-- Top Category Offer Start   -->
 
     <?php
