@@ -261,11 +261,10 @@ if (!is_active_sidebar('frontpage-sidebar')) {
             'relation' => 'AND',
             array(
                 'key' => 'is_featured',
+                'value' => 1
             ),
     )));
     
-    echo '<pre>';
-    print_r($wcatTerms);
     ?> 
     <div class="top-category">
         <h2 class="widget-title">Top category offer</h2>
