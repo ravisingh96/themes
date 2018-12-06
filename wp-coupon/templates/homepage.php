@@ -20,12 +20,13 @@ $layout = wpcoupon_get_site_layout();
 if (!is_active_sidebar('frontpage-sidebar')) {
     $layout = 'no-sidebar';
 }
+lang
 ?>
 <div id="content-wrap" class="frontpage-container container <?php echo esc_attr($layout); ?>">
 
 
     <center>
-        <h1 class="frontpage-heading">Find Latest Coupons, Deals &amp; Offers For Today</h1>
+        <h1 class="frontpage-heading"><?php echo icl_translate( 'wpml_custom', 'wpml_custom_homepage_h1', of_get_option('homepage_h1') ); ?></h1>
         <h4 class="frontpage-subheading">Save More Using Coupon Codes For Top Stores</h4>
         <br>
     </center>
