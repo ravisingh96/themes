@@ -404,6 +404,15 @@ go-gc {
     overflow: unset !important;
 }
 
+.rtl .owl-carousel.owl-loaded {
+    direction: ltr;
+}
+
+.rtl .owl-item {
+    direction: rtl;
+}
+
+
 @media screen and (min-width: 1100px){
 
 }
