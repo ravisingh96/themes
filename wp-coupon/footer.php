@@ -78,33 +78,7 @@ if (wpcoupon_get_option('before_footer', '') != '') {
 </footer><!-- END #colophon-->
 
 </div><!-- END #page -->
-<script>
-   
-    function setFsdCookie(id) {
-        cname = 'recent_posts';
-        var recent_post = getCookie("recent_posts");
-        if (recent_post) {
-            recent_post = jQuery.parseJSON(recent_post);
-            if (recent_post.includes(id) == false) {
-                recent_post.unshift(id);
-            }
-            if(recent_post.length > 4){
-                recent_post.pop();
-            }
-        } else {
-            recent_post = [];
-            recent_post.unshift(id);
-        }
 
-        cvalue = JSON.stringify(recent_post);
-        var d = new Date();
-        d.setTime(d.getTime() + (7 * 24 * 60 * 60 * 1000));
-        var expires = "expires=" + d.toGMTString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-
-</script>
 <?php wp_footer(); ?>
 </body>
 </html>
