@@ -40,7 +40,7 @@ global $st_option;
                         <?php } ?>
                     </div>
 
-                    <?php
+                    <?php /*
                     $header_icons = wpcoupon_get_option( 'header_icons' );
                     if ( $header_icons ) {
                     ?>
@@ -55,14 +55,14 @@ global $st_option;
                         <?php } ?>
 
                     </div>
-                    <?php } ?>
+                    <?php } */ ?>
 
                     <div class="header_right fright">
                         <form action="<?php echo home_url( '/' ); ?>" method="get" id="header-search">
                             <div class="header-search-input ui search large action left icon input">
-                                <input autocomplete="off" class="prompt" name="s" placeholder="<?php esc_attr_e( 'Search stores for coupons, deals ...', 'wp-coupon' ); ?>" type="text">
+                                <input aria-label="search" autocomplete="off" class="prompt" name="s" placeholder="<?php esc_attr_e( 'Search stores for coupons, deals ...', 'wp-coupon' ); ?>" type="text">
                                 <i class="search icon"></i>
-                                <button class="header-search-submit ui button"><?php esc_html_e( 'Search', 'wp-coupon' ); ?></button>
+                                <button aria-label="search" class="header-search-submit ui button"><?php esc_html_e( 'Search', 'wp-coupon' ); ?></button>
                                 <div class="results"></div>
                             </div>
                             <div class="clear"></div>

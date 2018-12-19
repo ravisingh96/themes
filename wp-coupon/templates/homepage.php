@@ -24,12 +24,7 @@ if (!is_active_sidebar('frontpage-sidebar')) {
 
 
 <div id="content-wrap" class="frontpage-container container <?php echo esc_attr($layout); ?>">
-
-    <?php the_content(); ?>
-
-   
-
-
+<?php the_content(); ?>
 </div> <!-- /#content-wrap -->
 
 

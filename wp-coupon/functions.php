@@ -545,11 +545,11 @@ function homepageBanner($atts) {
 
             <a href="<?php echo $link; ?>" class="ui fluid card">
                 <div class="image">
-                    <img src="<?php echo $banner_image; ?>">
+                    <img alt="<?php the_title(); ?>" title="<?php the_title(); ?>" src="<?php echo $banner_image; ?>">
                 </div>
                 <div class="content">
                     <span class="header">
-                        <img src="<?php echo $logo; ?>" class="ui middle aligned tiny image"> 
+                        <img src="<?php echo $logo; ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" class="ui middle aligned tiny image"> 
                         <div class="right">
                             <span class="header"><?php the_title(); ?></span>
                             <span class="subtitle"><?php echo '<span class="sub">' . $subtitle . '</span>'; ?> </span>
