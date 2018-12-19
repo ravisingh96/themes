@@ -6,6 +6,16 @@
  * @param exdays
  */
 
+jQuery.event.special.touchstart = {
+  setup: function( _, ns, handle ){
+    if ( ns.includes("noPreventDefault") ) {
+      this.addEventListener("touchstart", handle, { passive: false });
+    } else {
+      this.addEventListener("touchstart", handle, { passive: true });
+    }
+  }
+};
+
 function setFsdCookie(id) {
     cname = 'recent_posts';
     var recent_post = getCookie("recent_posts");
