@@ -39,7 +39,6 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         jQuery('.ui.accordion').accordion();
         jQuery(".baner-carousel").owlCarousel({
             items: 3,
-            dots: true,
             autoplay: 1000,
             loop: true,
             margin: 20,
@@ -73,7 +72,6 @@ if (!is_active_sidebar('frontpage-sidebar')) {
         });
         jQuery(".bank-carousel").owlCarousel({
             items: 4,
-            dots: true,
             loop: true,
             margin: 10,
             responsive: {
