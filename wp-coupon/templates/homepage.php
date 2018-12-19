@@ -89,13 +89,11 @@ if (!is_active_sidebar('frontpage-sidebar')) {
                 },
                 750: {
                     items: 3,
-                    dots: true,
                     mouseDrag: true,
                     touchDrag: true
                 },
                 1000: {
                     items: 4,
-                    dots: true,
                     nav: true,
                     mouseDrag: true,
                     touchDrag: true
