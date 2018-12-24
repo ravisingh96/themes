@@ -596,7 +596,7 @@ function topStores($atts) {
                             <a class="ui image middle aligned" href="<?php echo wpcoupon_store()->get_url(); ?>">
                                 <?php echo wpcoupon_store()->get_thumbnail() ?></a>
                             <div class="store-name">	
-                                <a href="<?php echo wpcoupon_store()->get_url(); ?>"><?php echo wpcoupon_store()->name; ?></a>
+                                <a onclick="setFsdCookie(<?php echo wpcoupon_coupon()->ID; ?>)" href="<?php echo wpcoupon_store()->get_url(); ?>"><?php echo wpcoupon_store()->name; ?></a>
                             </div>
 
                         </div>
@@ -631,7 +631,7 @@ function bestOffers($atts) {
                     wpcoupon_setup_coupon($post, $current_link);
                     $has_thumb = wpcoupon_maybe_show_coupon_thumb();
                     ?>
-                    <div class="bst-column column">
+                    <div onclick="setFsdCookie(<?php echo wpcoupon_coupon()->ID; ?>)" class="bst-column column">
 
                         <div class="ui segment title coupon-button-type">
                             <?php if ($has_thumb) { ?>
@@ -711,7 +711,7 @@ function catOffer($atts) {
                     wpcoupon_setup_coupon($post, $current_link);
                     $has_thumb = wpcoupon_maybe_show_coupon_thumb();
                     ?>
-                    <div class="item">
+                    <div onclick="setFsdCookie(<?php echo wpcoupon_coupon()->ID; ?>)" class="item">
                         <div class="ui segment coupon-button-type">
                             <div class="image"> <?php echo wpcoupon_coupon()->get_thumb('large'); ?></div>
                             <h5> <?php echo esc_html(get_the_title()); ?></h5>
@@ -810,7 +810,7 @@ function topCatOffer($atts) {
 
                                 <li class="go-cpn-show" >
                                     <span> <?php echo wpcoupon_coupon()->get_thumb('thumbnail'); ?></span>
-                                    <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+                                    <p><a onclick="setFsdCookie(<?php echo wpcoupon_coupon()->ID; ?>)" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
                                 </li>
 
 
