@@ -1,0 +1,192 @@
+#site-header-nav{  
+  background: #579091;
+    box-shadow: none;
+}
+.site-content .frontpage-container{
+	padding-top:60px !important;
+}
+.frontpage-after-main .widget_wpc_categories{
+	display:none;
+}
+.baner-carousel{
+	margin-bottom:40px;
+}
+.top-store h2.widget-title,
+.best-offer h2.widget-title,
+.bank-offer h2.widget-title{
+font-size: 23px;
+    font-weight: 300;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+}
+.popular-stores .store-thumb a{
+	line-height:0px;
+}
+.popular-stores .store-thumb a.ui{
+	
+}
+
+.popular-stores .store-thumb a {
+    line-height: 0px;
+}
+.popular-stores .store-name a {
+    text-align: center;
+    display: block;
+    font-size: 13px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    color: #666666;
+    line-height: 32px !important;
+    vertical-align: middle;
+}
+.store-thumb{
+	text-align:center;
+}
+.store-thumb a.image{
+	
+}
+.store-thumb a.image img{
+    height: auto;
+    width: auto;
+    float: none;	
+}
+.store-thumb a.image {
+height: 120px;
+    padding-top: 11px;
+}
+.popular-stores{
+	background:none;
+}
+.popular-stores .column .store-thumb{
+	background:#fff;
+}
+.top-store{
+	margin-bottom:40px;
+}
+.frontpage-subheading {
+    color: #777;
+}
+.frontpage-heading {
+    font-size: 25px;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: -0.2px;
+    margin-bottom: 14px;
+}
+.best-offer-column .ui.segment{
+	text-align: center;
+}
+.best-offer-column .ui.segment .image{
+	margin-bottom: 20px;
+    min-height: 100px;
+}
+.best-offer-column .ui.segment .image img{
+height: 102px;
+    width: auto;
+    float: none;
+    display: inline-block;
+}
+.best-offer-column .ui.segment h5{
+	min-height:57px;
+}
+.best-offer-column .ui.segment a.coupon-button{
+    line-height: 1;
+    padding: 14px 38px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    min-width: 195px;
+    text-align: center;	
+background-color: #579091;
+border:1px solid #579091;
+}
+.best-offer-column .ui.segment a.coupon-button:hover{
+	background-color:#fff;
+	color: #579091;
+}
+.best-offer{
+	margin-bottom:40px;
+}
+.owl-carousel.owl-theme .owl-dots .owl-dot{
+	outline:none !important;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev,
+ .bank-offer .owl-carousel .owl-nav button.owl-next{
+    position: absolute;
+    top: 35%;
+    margin: 0px;
+    padding: 0px !important;
+    /* height: 0px !important; */
+	 color: #579091;
+	 outline:none;
+ }
+ .bank-offer .owl-carousel .owl-nav button.owl-prev span,
+  .bank-offer .owl-carousel .owl-nav button.owl-next span{
+     font-size: 100px;
+    line-height: 0px;
+    padding: 0px;
+    margin: 0px;
+    height: 49px;
+    display: block;
+ }
+ .bank-offer .owl-carousel .owl-nav button.owl-prev{
+	 left:-45px;
+ }
+ .bank-offer .owl-carousel .owl-nav button.owl-next{
+	 right:-45px;
+	 left:auto;
+ }
+  .bank-offer .owl-theme .owl-nav [class*=owl-]:hover{
+	 background:none;
+ }
+
+
+ .bank-offer .owl-theme .owl-dots .owl-dot span,
+ .baner-carousel.owl-theme .owl-dots .owl-dot span{
+	  background:none;
+	  border:1px solid #579091;
+	  width: 16px;
+    height: 16px;
+ }
+  .bank-offer .owl-theme .owl-dots .owl-dot.active span,
+ .bank-offer .owl-theme .owl-dots .owl-dot:hover span,
+ .baner-carousel.owl-theme .owl-dots .owl-dot.active span,
+ .baner-carousel.owl-theme .owl-dots .owl-dot:hover span{
+	 background:#579091;
+ }
+
+@media screen and (min-width: 1100px){
+
+}
+@media screen and (min-width: 790px){
+#header-search input[type="text"] {
+    width: 400px;
+    height: 50px;
+}
+}
+
+@media screen and (min-width: 500px){
+
+}
+@media screen and (max-width: 767px){
+.best-offer .ui.grid>[class*="four column"].doubling:not(.stackable).row.row>.column,
+.best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.column:not(.row), 
+ .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.row>.column{
+	 width:100% !important;
+padding-bottom:0px;
+	 }
+.st-menu.st-menu-mobile{
+	background:#579091;
+}
+#nav-toggle i,
+.st-menu.st-menu-mobile i{
+	color:#fff;
+}
+}

@@ -1,0 +1,453 @@
+/*
+Theme Name: WP Coupon Child
+Author: Ravi Pratap Singh
+Description: Your description goes here
+Version: 1.0
+Template: wp-coupon
+
+This is the child theme for WP Coupon theme, generated with Generate Child Theme plugin by catchthemes.
+
+(optional values you can add: Theme URI, Author URI, License, License URI, Tags, Text Domain)
+*/
+
+
+#site-header-nav{  
+    background: #579091;
+    box-shadow: none;
+}
+.site-content .frontpage-container{
+    padding-top:60px !important;
+}
+.frontpage-after-main .widget_wpc_categories{
+    display:none;
+}
+.baner-carousel{
+    margin-bottom:40px;
+}
+.top-store h2.widget-title,
+.best-offer h2.widget-title,
+.top-category h2.widget-title,
+.bank-offer h2.widget-title{
+    font-size: 23px;
+    font-weight: 300;
+    letter-spacing: -0.3px;
+    margin-bottom: 20px;
+}
+.popular-stores .store-thumb a{
+    line-height:0px;
+}
+.popular-stores .store-thumb a.ui{
+
+}
+
+.popular-stores .store-thumb a {
+    line-height: 0px;
+}
+.popular-stores .store-name a {
+    text-align: center;
+    display: block;
+    font-size: 13px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+    color: #666666;
+    line-height: 32px !important;
+    vertical-align: middle;
+}
+.store-thumb{
+    text-align:center;
+}
+.store-thumb a.image{
+
+}
+.store-thumb a.image img{
+    height: auto;
+    width: auto;
+    float: none;	
+}
+.store-thumb a.image {
+    height: 120px;
+    padding-top: 11px;
+}
+.popular-stores{
+    background:none;
+}
+.popular-stores .column .store-thumb{
+    background:#fff;
+}
+.top-store{
+    margin-bottom:40px;
+}
+.frontpage-subheading {
+    color: #777;
+}
+.frontpage-heading {
+    font-size: 25px;
+    font-weight: 700;
+    color: #555;
+    letter-spacing: -0.2px;
+    margin-bottom: 14px;
+}
+.best-offer-column .ui.segment{
+    text-align: center;
+}
+.best-offer-column .ui.segment .image{
+    margin-bottom: 20px;
+    min-height: 100px;
+}
+.best-offer-column .ui.segment .image img{
+    height: 102px;
+    width: auto;
+    float: none;
+    display: inline-block;
+}
+.best-offer-column .ui.segment h5{
+    min-height:57px;
+}
+.best-offer-column .ui.segment a.coupon-button{
+    line-height: 1;
+    padding: 14px 38px;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    margin-bottom: 2px;
+    min-width: 195px;
+    text-align: center;	
+    background-color: #579091;
+    border:1px solid #579091;
+}
+.best-offer-column .ui.segment a.coupon-button:hover{
+    background-color:#fff;
+    color: #fff;
+}
+.best-offer{
+    margin-bottom:40px;
+}
+.owl-carousel.owl-theme .owl-dots .owl-dot{
+    outline:none !important;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev,
+.bank-offer .owl-carousel .owl-nav button.owl-next{
+    position: absolute;
+    top: 35%;
+    margin: 0px;
+    padding: 0px !important;
+    /* height: 0px !important; */
+    color: #579091;
+    outline:none;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev span,
+.bank-offer .owl-carousel .owl-nav button.owl-next span{
+    font-size: 100px;
+    line-height: 0px;
+    padding: 0px;
+    margin: 0px;
+    height: 49px;
+    display: block;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-prev{
+    left:-45px;
+}
+.bank-offer .owl-carousel .owl-nav button.owl-next{
+    right:-45px;
+    left:auto;
+}
+.bank-offer .owl-theme .owl-nav [class*=owl-]:hover{
+    background:none;
+}
+
+
+.bank-offer .owl-theme .owl-dots .owl-dot span,
+.baner-carousel.owl-theme .owl-dots .owl-dot span{
+    background:none;
+    border:1px solid #579091;
+    width: 16px;
+    height: 16px;
+}
+.bank-offer .owl-theme .owl-dots .owl-dot.active span,
+.bank-offer .owl-theme .owl-dots .owl-dot:hover span,
+.baner-carousel.owl-theme .owl-dots .owl-dot.active span,
+.baner-carousel.owl-theme .owl-dots .owl-dot:hover span{
+    background:#579091;
+}
+.home-accordian .title{
+
+    padding: 0px;
+    line-height: 45px;
+    padding: 0px !important;
+
+    font-size: 19px !important;
+    margin-bottom: 20px;
+    border:1px solid #579091;
+
+
+    padding-left:15px !important;
+    background: #579091;
+    color: #fff !important;
+}
+.home-accordian .title.active,
+.home-accordian .title:hover{
+    background: #579091;
+    color: #fff !important;
+}
+.home-accordian .title i.dropdown.icon{
+    top: 15px;
+    position: relative;
+    float: right !important;
+}
+.home-accordian{
+    padding-top:40px;
+}
+.mc4wp-form input[type="submit"]{
+    background: #00979d !important;
+}
+.mc4wp-form label{
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+.site-footer .footer_copy{
+    padding-top:0px;
+    border:none;
+    margin-top:20px;
+}
+.coupon-store-main .coupon-filter{
+    display:none;
+}
+
+.coupon-code {
+    color: #444 !important;
+    background: linear-gradient(315deg, rgba(0, 0, 0, 0.06) 10%, transparent 15%, transparent 35%, rgba(0, 0, 0, 0.06) 40%, rgba(0, 0, 0, 0.06) 60%, transparent 65%, transparent 85%, rgba(0, 0, 0, 0.06) 90%) repeat scroll 0 0/6px 6px transparent !important;
+    text-align: right !important;
+    padding: 12px 12px !important;
+    font-size: 20px !important;
+    position: relative;
+}
+.coupon-button-type .coupon-code .get-code {
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background-color: #579091 !important;
+    color: #FFF;
+    font-size: 16px;
+    padding: 17px 15px 14px 14px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    transition: all 0.5s ease;
+}
+.coupon-button-type .coupon-code .get-code:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 47px solid transparent;
+    border-left: 44px solid #579091 !important;
+    position: absolute;
+    right: -44px;
+    top: 0;
+}
+go-gc {
+    margin: 0 -12px;
+}
+.list-inline {
+    display:flex;
+    font-size: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.go-gc>li {
+    width: 25%;
+    padding: 0 12px;
+    vertical-align: top;
+}
+.go-gcCard {
+    position: relative;
+    height: 274px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.go-gcCard>.go-gcFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 7;
+    width: 100%;
+    height: 100%;
+}
+.go-smooth {
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+}
+.go-gcCard>.go-gcFront:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+}
+.go-gcCard>.go-gcFront>img {
+    max-width: none;
+}
+.go-gcCard>.go-gcFront>span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: -12px auto 0;
+    text-transform: uppercase;
+}
+.go-gcBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 6;
+    opacity: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 2px;
+    visibility: hidden;
+    background-color: #fff;
+}
+.go-gcBack>b {
+    display: block;
+    color: #7b8b8e;
+    font-size: 12px;
+    line-height: 16px;
+    padding: 15px 12px 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d6d8da;
+}
+.go-gcBack>ul {
+    max-height: 84%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.list-unstyled {
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.go-gcBack>ul>li {
+    font-size: 0;
+    padding: 12px;
+}
+.go-gcBack>ul>li>span, .go-gcBack>ul>li>p {
+    width: 26%;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.go-gcBack>ul>li>span>img {
+    max-height: 50px;
+    max-width: 50px;
+}
+.go-gcBack>ul>li>p {
+    width: 74%;
+    cursor: pointer;
+    padding-left: 12px;
+}
+.go-gcBack>ul>li>span, .go-gcBack>ul>li>p {
+    line-height: 1.2;
+    font-size: 14px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.go-gcCard:hover .go-gcFront {
+    left: -180%;
+}
+.go-gcCard:hover>.go-gcBack {
+    opacity: 1;
+    visibility: visible;
+}
+
+.owl-item .header .right .header {
+    font-size: 1.2em;
+}
+
+.owl-item .header .right {
+    float: right;
+    display: block;
+    width: 70%;
+}
+
+.owl-item span.subtitle {
+    display: block;
+}
+
+.baner-carousel .card .image img{
+    min-height: 280px;
+    max-height: 280px;
+}
+.baner-carousel .card .content img {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.baner-carousel .card .content {
+    min-height: 72px;
+    max-height: 72px;
+}
+
+.ui.btn, .ui.btn:hover, .ui.btn.btn_secondary, .coupon-button-type .coupon-deal, .coupon-button-type .coupon-print, .coupon-button-type .coupon-code .get-code{
+    background-color: #579091 !important;
+}
+
+.archive .wpb_content_element {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+.archive .store-listing-item .latest-coupon {
+    margin-right: 20px;
+    width: 60%;
+    height: auto;
+    overflow: unset !important;
+}
+
+@media screen and (min-width: 1100px){
+
+}
+@media screen and (min-width: 790px){
+    #header-search input[type="text"] {
+        width: 500px;
+        height: 50px;
+    }
+}
+
+@media screen and (min-width: 500px){
+
+}
+@media screen and (max-width: 767px){
+    .best-offer .ui.grid>[class*="four column"].doubling:not(.stackable).row.row>.column,
+    .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.column:not(.row), 
+    .best-offer .ui[class*="four column"].doubling:not(.stackable).grid>.row>.column{
+        width:100% !important;
+        padding-bottom:0px;
+    }
+    .st-menu.st-menu-mobile{
+        background:#579091;
+    }
+    #nav-toggle i,.st-menu.st-menu-mobile i{
+        color:#fff;
+    }
+    .go-gc>li {
+        padding: 0 6px;
+        width: 100%;
+        margin: 0 auto 12px;
+    }
+    .list-inline {
+        display:inherit;
+    }
+}
